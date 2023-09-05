@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.ProfileActivity">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.ib.textileecommerce.viewModel.ProfileViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutTopBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_42sdp">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:contextClickable="true"
+                android:padding="@dimen/_6sdp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.ib.textileecommerce.customViews.CustomTextView
+                android:id="@+id/tvScreenTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/my_profile_text"
+                android:textColor="@color/headingColor"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/iv"
+                app:layout_constraintStart_toEndOf="@+id/ivBack"
+                app:layout_constraintTop_toTopOf="parent"
+                app:typeface="SEGOE_SEMI_BOLD" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:contextClickable="true"
+                android:padding="@dimen/_5sdp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_user"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivProfileImage"
+                    android:layout_width="@dimen/_60sdp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_user"
+                    app:shapeAppearanceOverlay="@style/style_radius" />
+
+                <com.ib.textileecommerce.customViews.CustomTextView
+                    android:id="@+id/tvChangeProfilePhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/change_photo_text"
+                    android:textColor="@color/descColor" />
+
+                <com.ib.textileecommerce.customViews.CustomTextView
+                    android:id="@+id/tvNameText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/name_text"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12ssp" />
+
+                <com.ib.textileecommerce.customViews.CustomEditText
+                    android:id="@+id/etName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_37sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/layout_field_background"
+                    android:ellipsize="end"
+                    android:focusable="true"
+                    android:hint="@string/name_text"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textColorHint="@color/textFieldHeadingColor"
+                    android:textCursorDrawable="@color/black"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvNameText" />
+
+                <com.ib.textileecommerce.customViews.CustomTextView
+                    android:id="@+id/tvPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/phone_number_text"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.ib.textileecommerce.customViews.CustomEditText
+                        android:id="@+id/etPhoneNumberCode"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_37sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/layout_field_background"
+                        android:ems="10"
+                        android:hint="+91"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:textColor="@color/textFieldHeadingColor"
+                        android:textColorHint="@color/textFieldHeadingColor"
+                        android:textCursorDrawable="@color/black"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintEnd_toStartOf="@+id/etPhoneNumber"
+                        app:layout_constraintTop_toBottomOf="@+id/tvPhoneNumber" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_37sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@drawable/layout_field_background">
+
+                        <com.ib.textileecommerce.customViews.CustomEditText
+                            android:id="@+id/etPhoneNumber"
+                            android:layout_width="@dimen/_120sdp"
+                            android:layout_height="@dimen/_37sdp"
+                            android:background="@null"
+                            android:ems="10"
+                            android:focusable="true"
+                            android:hint="7269933900"
+                            android:imeOptions="actionNext"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:paddingStart="@dimen/_10sdp"
+                            android:paddingEnd="@dimen/_10sdp"
+                            android:singleLine="true"
+                            android:textColor="@color/textFieldHeadingColor"
+                            android:textColorHint="@color/textFieldHeadingColor"
+                            android:textCursorDrawable="@color/black"
+                            android:textSize="@dimen/_12sdp" />
+
+                        <com.ib.textileecommerce.customViews.CustomTextView
+                            android:id="@+id/tvChangePhoneNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:layout_toEndOf="@+id/etPhoneNumber"
+                            android:padding="@dimen/_2sdp"
+                            android:paddingEnd="@dimen/_5sdp"
+                            android:singleLine="true"
+                            android:text="@string/change_text"
+                            android:textAlignment="textEnd"
+                            android:textColor="@color/mainColor"
+                            android:textSize="@dimen/_11sdp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <com.ib.textileecommerce.customViews.CustomTextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/email_text"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12sdp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_37sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/layout_field_background">
+
+                    <com.ib.textileecommerce.customViews.CustomEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_37sdp"
+                        android:background="@null"
+                        android:ellipsize="end"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:singleLine="true"
+                        android:textCursorDrawable="@color/black"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.ib.textileecommerce.customViews.CustomTextView
+                        android:id="@+id/tvChangeEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:padding="@dimen/_2sdp"
+                        android:singleLine="true"
+                        android:text="@string/change_text"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/mainColor"
+                        android:textSize="@dimen/_11sdp" />
+                </RelativeLayout>
+
+                <com.ib.textileecommerce.customViews.CustomTextView
+                    android:id="@+id/tvBirthDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Birthday"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.ib.textileecommerce.customViews.CustomEditText
+                    android:id="@+id/etBirthDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_37sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/layout_field_background"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint="14/12/2001"
+                    android:imeOptions="actionNext"
+                    android:inputType="date"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textColorHint="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12sdp" />
+
+                <com.ib.textileecommerce.customViews.CustomTextView
+                    android:id="@+id/tvGender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/gender_text"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12sdp" />
+
+                <Spinner
+                    android:id="@+id/genderSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_37sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="@drawable/layout_field_background"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textColorHint="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12sdp" />
+
+                <!--<com.ib.textileecommerce.customViews.CustomEditText
+                    android:id="@+id/editgenderprofile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_37sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_18sdp"
+                    android:background="@drawable/layout_field_background"
+                    android:hint="Male"
+                    android:imeOptions="actionNext"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:singleLine="true"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textColorHint="@color/textFieldHeadingColor"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGender" />-->
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:layout_marginEnd="@dimen/_18sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/layout_main_button"
+                    android:text="@string/submit_text"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/genderSpinner" />
+
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</layout>

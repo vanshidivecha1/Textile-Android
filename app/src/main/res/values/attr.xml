@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomTextView">
+        <attr name="typeface" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomEditText">
+        <attr name="typeface" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomButton">
+        <attr name="typeface" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomTextInputLayout">
+        <attr name="typeface" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomRadioButton">
+        <attr name="typeface" />
+    </declare-styleable>
+
+    <declare-styleable name="CustomCheckBox">
+        <attr name="typeface" />
+    </declare-styleable>
+
+    <attr name="typeface" format="enum">
+        <enum name="SEGOE_REGULAR" value="0" />
+        <enum name="SEGOE_LIGHT" value="1" />
+        <enum name="SEGOE_SEMI_BOLD" value="2" />
+        <enum name="SEGOE_BOLD" value="3" />
+        <enum name="SEGOE_LIGHT_ITALIC" value="4" />
+    </attr>
+
+    <declare-styleable name="IconButton">
+        <attr name="iconSrc" format="reference" />
+        <attr name="iconSize" format="dimension" />
+        <attr name="iconPadding" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="GarbaJockeySplashView">
+        <attr name="icon" format="reference" />
+        <attr name="iconColor" format="color" />
+        <attr name="holeFillColor" format="color" />
+        <attr name="duration" format="integer" />
+        <attr name="removeFromParentOnEnd" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="roundedCorners">
+            <flag name="topLeft" value="1" />
+            <flag name="topRight" value="2" />
+            <flag name="bottomRight" value="4" />
+            <flag name="bottomLeft" value="8" />
+            <flag name="all" value="15" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="cs_CircularSeekBar">
+        <attr name="cs_circle_style">
+            <enum name="butt" value="0" />
+            <enum name="round" value="1" />
+            <enum name="square" value="2" />
+        </attr>
+        <attr name="cs_progress" format="integer" />
+        <attr name="cs_max" format="integer" />
+        <attr name="cs_negative_enabled" format="boolean" />
+        <attr name="cs_move_outside_circle" format="boolean" />
+        <attr name="cs_maintain_equal_circle" format="boolean" />
+        <attr name="cs_use_custom_radii" format="boolean" />
+        <attr name="cs_lock_enabled" format="boolean" />
+        <attr name="cs_circle_x_radius" format="dimension" />
+        <attr name="cs_circle_y_radius" format="dimension" />
+        <attr name="cs_circle_stroke_width" format="dimension" />
+        <attr name="cs_disable_pointer" format="boolean" />
+        <attr name="cs_pointer_stroke_width" format="dimension" />
+        <attr name="cs_pointer_halo_width" format="dimension" />
+        <attr name="cs_pointer_halo_border_width" format="dimension" />
+        <attr name="cs_circle_fill" format="color" />
+        <attr name="cs_circle_color" format="color" />
+        <attr name="cs_circle_progress_color" format="color" />
+        <attr name="cs_pointer_color" format="color" />
+        <attr name="cs_pointer_halo_color" format="color" />
+        <attr name="cs_pointer_halo_color_ontouch" format="color" />
+        <attr name="cs_pointer_alpha_ontouch" format="integer" />
+        <attr name="cs_pointer_angle" format="float" />
+        <attr name="cs_start_angle" format="float" />
+        <attr name="cs_end_angle" format="float" />
+        <attr name="cs_disable_progress_glow" format="boolean" />
+        <attr name="cs_hide_progress_when_empty" format="boolean" />
+    </declare-styleable>
+</resources>

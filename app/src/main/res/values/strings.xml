@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">Textile ECommerce</string>
+
+    <!--Custom Dialog-->
+    <string name="view">View</string>
+    <string name="ok">OK</string>
+
+    <!--Server Errors-->
+    <string name="no_internet">Make you sure you are connected with internet</string>
+    <string name="slow_internet">Your internet connection is very slow</string>
+    <string name="server_error">Server Error</string>
+
+    <!-- Login Screen Content -->
+    <string name="login_screen_welcome_back_text">Welcome Back</string>
+    <string name="login_screen_desc">Welcome back! Please enter your details</string>
+
+    <!-- Login Fields Content  -->
+    <string name="email_text">Email</string>
+    <string name="enter_your_email_id_text">Enter Your Email ID</string>
+    <string name="password_text">Password</string>
+    <string name="password_hint_text">* * * * * * * *</string>
+    <string name="forgot_password_text">Forgot Password ?</string>
+    <string name="sign_in_text">Sign in</string>
+    <string name="sign_in_with_google_text">Sign in with google</string>
+    <string name="don_t_have_an_account_text">Don\'t have an account?</string>
+    <string name="sign_up_for_free">Sign up for free</string>
+
+    <!-- Home Screen Menu Content -->
+    <string name="settings_text">Settings</string>
+    <string name="favourite_text">Favourite</string>
+    <string name="my_bag_text">My Bag</string>
+    <string name="home_text">Home</string>
+
+    <!-- Profile Screen Content -->
+    <string name="change_photo_text">change photo</string>
+    <string name="name_text">Name</string>
+    <string name="phone_number_text">Phone Number</string>
+    <string name="change_text">Change</string>
+    <string name="submit_text">Submit</string>
+    <string name="gender_text">Gender</string>
+    <string name="my_profile_text">My Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

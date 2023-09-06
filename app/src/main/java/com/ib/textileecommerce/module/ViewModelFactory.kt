@@ -3,11 +3,14 @@ package com.ib.textileecommerce.module
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.ib.textileecommerce.networking.NetworkService
+import com.ib.textileecommerce.viewModel.BagViewModel
 import com.ib.textileecommerce.viewModel.BaseViewModel
 import com.ib.textileecommerce.viewModel.DashBoardViewModel
+import com.ib.textileecommerce.viewModel.FavouriteViewModel
 import com.ib.textileecommerce.viewModel.HomeViewModel
 import com.ib.textileecommerce.viewModel.LoginViewModel
 import com.ib.textileecommerce.viewModel.ProfileViewModel
+import com.ib.textileecommerce.viewModel.SettingsViewModel
 import com.ib.textileecommerce.viewModel.SplashViewModel
 import com.ib.textileecommerce.views.BaseView
 import javax.inject.Inject
@@ -36,6 +39,18 @@ class ViewModelFactory @Inject constructor(
             ) as T
 
             modelClass.isAssignableFrom(HomeViewModel::class.java) -> HomeViewModel(
+                networkService, baseView
+            ) as T
+
+            modelClass.isAssignableFrom(BagViewModel::class.java) -> BagViewModel(
+                networkService, baseView
+            ) as T
+
+            modelClass.isAssignableFrom(FavouriteViewModel::class.java) -> FavouriteViewModel(
+                networkService, baseView
+            ) as T
+
+            modelClass.isAssignableFrom(SettingsViewModel::class.java) -> SettingsViewModel(
                 networkService, baseView
             ) as T
 

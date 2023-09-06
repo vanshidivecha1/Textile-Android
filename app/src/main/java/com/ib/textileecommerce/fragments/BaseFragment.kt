@@ -52,8 +52,6 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment(), BaseView {
         })
     }
 
-    fun getViewBinding() = viewDataBinding
-
     /*override fun showMsg(msgId: Int) {
         if (activity != null && requireActivity() is HomeActivity)
             (requireActivity() as HomeActivity).showMsg(msgId)

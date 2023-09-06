@@ -12,26 +12,18 @@
             type="com.ib.textileecommerce.viewModel.HomeViewModel" />
     </data>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:background="@color/backgroundColor">
 
-        <include
-            android:id="@+id/layoutToolBar"
-            layout="@layout/layout_top_bar" />
-
-        <RelativeLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Home"
+            android:textColor="@color/headingColor" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/hello_blank_fragment" />
+    </RelativeLayout>
 
-        </RelativeLayout>
-
-    </LinearLayout>
 </layout>

@@ -48,6 +48,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseView
         hideKeyboard()
         showAlert(getString(messageId))
     }
+
     override fun showMessage(message: String) {
         hideKeyboard()
         showAlert(message)
@@ -138,18 +139,18 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseView
      * Add fragment on activity or fragment
      */
     fun addFragment(fragment: Fragment, tag: String) {
-       /* supportFragmentManager.beginTransaction().addToBackStack(tag)
-            .replace(R.id.flContainer, fragment, tag)
-            .commitAllowingStateLoss()*/
+        supportFragmentManager.beginTransaction().addToBackStack(tag)
+            .replace(R.id.frameContainer, fragment, tag)
+            .commitAllowingStateLoss()
     }
 
     /**
      * Add Child fragment- fragment in fragment
      */
     fun addFragmentChild(childFragmentManager: FragmentManager, fragment: Fragment, tag: String) {
-        /*childFragmentManager.beginTransaction().addToBackStack(tag)
-            .add(R.id.flContainer, fragment, tag)
-            .commitAllowingStateLoss()*/
+        childFragmentManager.beginTransaction().addToBackStack(tag)
+            .add(R.id.frameContainer, fragment, tag)
+            .commitAllowingStateLoss()
     }
 
     /**
@@ -275,7 +276,10 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseView
      */
     fun finishActivity() {
         finish()
-        overridePendingTransition(R.anim.anim_screen_left_to_right, R.anim.anim_screen_right_to_left)
+        overridePendingTransition(
+            R.anim.anim_screen_left_to_right,
+            R.anim.anim_screen_right_to_left
+        )
     }
 
     fun setListenerOfInteractionWithFragment(onInteractionWithFragment: OnInteractionWithFragment) {

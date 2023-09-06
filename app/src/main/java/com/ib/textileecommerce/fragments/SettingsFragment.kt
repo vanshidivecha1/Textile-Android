@@ -2,21 +2,20 @@ package com.ib.textileecommerce.fragments
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
 import com.ib.textileecommerce.BR
 import com.ib.textileecommerce.R
 import com.ib.textileecommerce.activities.DashBoardActivity
-import com.ib.textileecommerce.databinding.FragmentHomeBinding
+import com.ib.textileecommerce.databinding.FragmentSettingsBinding
 import com.ib.textileecommerce.module.ViewModelFactory
 import com.ib.textileecommerce.utils.SessionManager
-import com.ib.textileecommerce.viewModel.HomeViewModel
-import com.ib.textileecommerce.views.HomeView
+import com.ib.textileecommerce.viewModel.SettingsViewModel
+import com.ib.textileecommerce.views.SettingsView
 import javax.inject.Inject
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
+
+class SettingsFragment : BaseFragment<FragmentSettingsBinding>(), SettingsView {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -24,12 +23,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
     @Inject
     lateinit var sessionManager: SessionManager
 
-    private lateinit var homeViewModel: HomeViewModel
-    private lateinit var activityHomeBinding: FragmentHomeBinding
+    private lateinit var settingsViewModel: SettingsViewModel
+    private lateinit var fragmentSettingsBinding: FragmentSettingsBinding
 
-    override fun getViewModel() = homeViewModel
+    override fun getViewModel() = settingsViewModel
 
-    override fun getLayoutId() = R.layout.fragment_home
+    override fun getLayoutId() = R.layout.fragment_settings
 
     override fun getBindingVariable() = BR.viewModel
 
@@ -47,7 +46,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
         layoutView = view
         setViewModel()
         initView()
-        Log.e("HomeFragment --", "--")
+        Log.e("SettingsFragment --", "--")
     }
 
     companion object {
@@ -59,10 +58,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
     }
 
     private fun setViewModel() {
-        homeViewModel =
-            ViewModelProviders.of(this, viewModelFactory)[HomeViewModel::class.java]
-        homeViewModel.setViewInterface(this)
-        activityHomeBinding = bindViewData()
-        activityHomeBinding.viewModel = homeViewModel
+        settingsViewModel =
+            ViewModelProviders.of(this, viewModelFactory)[SettingsViewModel::class.java]
+        settingsViewModel.setViewInterface(this)
+        fragmentSettingsBinding = bindViewData()
+        fragmentSettingsBinding.viewModel = settingsViewModel
     }
 }

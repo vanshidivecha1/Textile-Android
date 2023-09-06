@@ -3,15 +3,19 @@ package com.ib.textileecommerce.activities
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ib.textileecommerce.BR
 import com.ib.textileecommerce.R
 import com.ib.textileecommerce.application.TextileApplication
 import com.ib.textileecommerce.databinding.ActivityDashboardBinding
+import com.ib.textileecommerce.fragments.BagFragment
+import com.ib.textileecommerce.fragments.FavouriteFragment
 import com.ib.textileecommerce.fragments.HomeFragment
+import com.ib.textileecommerce.fragments.SettingsFragment
 import com.ib.textileecommerce.module.ViewModelFactory
+import com.ib.textileecommerce.utils.Constants
 import com.ib.textileecommerce.utils.SessionManager
 import com.ib.textileecommerce.viewModel.DashBoardViewModel
 import com.ib.textileecommerce.views.DashBoardView
@@ -37,7 +41,6 @@ class DashBoardActivity : BaseActivity<ActivityDashboardBinding>(), DashBoardVie
     override fun getBindingVariable() = BR.viewModel
 
     var context = TextileApplication.getContext()
-    private val homeFragment = HomeFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,59 +48,45 @@ class DashBoardActivity : BaseActivity<ActivityDashboardBinding>(), DashBoardVie
         setViewModel()
         initView()
 
-        loadFragment(homeFragment)
+        setHomeToolBar()
+        addFragment(HomeFragment.getInstance(), Constants.HOME_FRAGMENT)
+        setBottomView()
         /*val bagFragment = BagFragment()
         val favouriteFragment = FavouriteFragment(this)
         val settingsFragment = SettingsFragment()*/
 
-        setBottomView()
     }
-
-    private val navListener: BottomNavigationView.OnNavigationItemSelectedListener =
-        BottomNavigationView.OnNavigationItemSelectedListener { item ->
-            val fragment: Fragment
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    fragment = homeFragment
-                    loadFragment(fragment)
-                    Log.e(tag, "Home Selected")
-                }
-            }
-
-            true
-        }
 
     private fun setBottomView() {
         activityDashBoardBinding.bottomNavigation.itemIconTintList = null
-        activityDashBoardBinding.bottomNavigation.setOnNavigationItemSelectedListener(navListener)
-
-        activityDashBoardBinding.bottomNavigation.background = null
-        activityDashBoardBinding.bottomNavigation.menu.getItem(2).isEnabled = false
-
-        /*activityDashBoardBinding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+        activityDashBoardBinding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_home -> {
-                    setCurrentFragment(homeFragment)
+                    addFragment(HomeFragment.getInstance(), Constants.HOME_FRAGMENT)
+                    setHomeToolBar()
                     Log.e(tag, "Home Selected")
                 }
 
-               *//* R.id.nav_bag -> {
-                    setCurrentFragment(bagfragments)
-                    Log.i(TAG, "My Bag Selected")
+                R.id.nav_bag -> {
+                    loadFragment(BagFragment.getInstance())
+                    setBagToolBar()
+                    Log.e(tag, "My Bag Selected")
                 }
 
                 R.id.nav_favourite -> {
-                    setCurrentFragment(favouritefragments)
-                    Log.i(TAG, "Favourite Selected")
+                    loadFragment(FavouriteFragment.getInstance())
+                    setFavouriteToolBar()
+                    Log.e(tag, "Favourite Selected")
                 }
 
                 R.id.nav_settings -> {
-                    setCurrentFragment(settingsfragments)
-                    Log.i(TAG, "Settings Selected")
-                }*//*
+                    loadFragment(SettingsFragment.getInstance())
+                    setSettingsToolBar()
+                    Log.e(tag, "Settings Selected")
+                }
             }
             true
-        }*/
+        }
     }
 
     private fun initView() {
@@ -124,5 +113,32 @@ class DashBoardActivity : BaseActivity<ActivityDashboardBinding>(), DashBoardVie
             return true
         }
         return false
+    }
+
+    private fun setHomeToolBar() {
+        activityDashBoardBinding.layoutHomeTopBar.visibility = View.VISIBLE
+        activityDashBoardBinding.layoutTopBar.visibility = View.GONE
+        activityDashBoardBinding.bottomNavigation.menu.findItem(R.id.nav_home).isChecked = true
+    }
+
+    private fun setBagToolBar() {
+        activityDashBoardBinding.layoutHomeTopBar.visibility = View.GONE
+        activityDashBoardBinding.layoutTopBar.visibility = View.VISIBLE
+        activityDashBoardBinding.tvTitle.text = "Shopping"
+        activityDashBoardBinding.bottomNavigation.menu.findItem(R.id.nav_bag).isChecked = true
+    }
+
+    private fun setFavouriteToolBar() {
+        activityDashBoardBinding.layoutHomeTopBar.visibility = View.GONE
+        activityDashBoardBinding.layoutTopBar.visibility = View.VISIBLE
+        activityDashBoardBinding.tvTitle.text = "Favourite"
+        activityDashBoardBinding.bottomNavigation.menu.findItem(R.id.nav_favourite).isChecked = true
+    }
+
+    private fun setSettingsToolBar() {
+        activityDashBoardBinding.layoutHomeTopBar.visibility = View.GONE
+        activityDashBoardBinding.layoutTopBar.visibility = View.VISIBLE
+        activityDashBoardBinding.tvTitle.text = "Settings"
+        activityDashBoardBinding.bottomNavigation.menu.findItem(R.id.nav_settings).isChecked = true
     }
 }

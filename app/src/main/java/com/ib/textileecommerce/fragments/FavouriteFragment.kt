@@ -9,14 +9,17 @@ import androidx.lifecycle.ViewModelProviders
 import com.ib.textileecommerce.BR
 import com.ib.textileecommerce.R
 import com.ib.textileecommerce.activities.DashBoardActivity
+import com.ib.textileecommerce.databinding.FragmentFavouriteBinding
 import com.ib.textileecommerce.databinding.FragmentHomeBinding
 import com.ib.textileecommerce.module.ViewModelFactory
 import com.ib.textileecommerce.utils.SessionManager
+import com.ib.textileecommerce.viewModel.FavouriteViewModel
 import com.ib.textileecommerce.viewModel.HomeViewModel
-import com.ib.textileecommerce.views.HomeView
+import com.ib.textileecommerce.views.FavouriteView
 import javax.inject.Inject
 
-class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
+
+class FavouriteFragment : BaseFragment<FragmentFavouriteBinding>(), FavouriteView {
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -24,12 +27,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
     @Inject
     lateinit var sessionManager: SessionManager
 
-    private lateinit var homeViewModel: HomeViewModel
-    private lateinit var activityHomeBinding: FragmentHomeBinding
+    private lateinit var favouriteViewModel: FavouriteViewModel
+    private lateinit var fragmentFavouriteBinding: FragmentFavouriteBinding
 
-    override fun getViewModel() = homeViewModel
+    override fun getViewModel() = favouriteViewModel
 
-    override fun getLayoutId() = R.layout.fragment_home
+    override fun getLayoutId() = R.layout.fragment_favourite
 
     override fun getBindingVariable() = BR.viewModel
 
@@ -47,7 +50,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
         layoutView = view
         setViewModel()
         initView()
-        Log.e("HomeFragment --", "--")
+        Log.e("FavouriteFragment --", "--")
     }
 
     companion object {
@@ -59,10 +62,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
     }
 
     private fun setViewModel() {
-        homeViewModel =
-            ViewModelProviders.of(this, viewModelFactory)[HomeViewModel::class.java]
-        homeViewModel.setViewInterface(this)
-        activityHomeBinding = bindViewData()
-        activityHomeBinding.viewModel = homeViewModel
+        favouriteViewModel =
+            ViewModelProviders.of(this, viewModelFactory)[FavouriteViewModel::class.java]
+        favouriteViewModel.setViewInterface(this)
+        fragmentFavouriteBinding = bindViewData()
+        fragmentFavouriteBinding.viewModel = favouriteViewModel
     }
 }

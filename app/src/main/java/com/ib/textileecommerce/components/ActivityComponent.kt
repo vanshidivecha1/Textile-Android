@@ -4,7 +4,10 @@ import com.ib.textileecommerce.activities.DashBoardActivity
 import com.ib.textileecommerce.activities.LoginActivity
 import com.ib.textileecommerce.activities.ProfileActivity
 import com.ib.textileecommerce.activities.SplashActivity
+import com.ib.textileecommerce.fragments.BagFragment
+import com.ib.textileecommerce.fragments.FavouriteFragment
 import com.ib.textileecommerce.fragments.HomeFragment
+import com.ib.textileecommerce.fragments.SettingsFragment
 import com.ib.textileecommerce.module.ActivityModule
 import com.ib.textileecommerce.module.ViewModule
 import com.ib.textileecommerce.scopes.PerActivity
@@ -21,4 +24,7 @@ interface ActivityComponent {
 
     // Fragments
     fun inject(homeFragment: HomeFragment)
+    fun inject(bagFragment: BagFragment)
+    fun inject(favouriteFragment: FavouriteFragment)
+    fun inject(settingsFragment: SettingsFragment)
 }

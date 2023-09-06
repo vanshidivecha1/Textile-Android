@@ -31,4 +31,10 @@ object Constants {
     const val SEGOE_BOLD = 3
     const val SEGOE_LIGHT_ITALIC = 4
 
+    // Fragments
+    const val HOME_FRAGMENT = "HomeFragment"
+    const val BAG_FRAGMENT = "BagFragment"
+    const val FAVOURITE_FRAGMENT = "FavouriteFragment"
+    const val SETTINGS_FRAGMENT = "SettingsFragment"
+
 }

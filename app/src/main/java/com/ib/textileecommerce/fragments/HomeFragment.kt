@@ -2,9 +2,7 @@ package com.ib.textileecommerce.fragments
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
 import com.ib.textileecommerce.BR
 import com.ib.textileecommerce.R
@@ -17,6 +15,8 @@ import com.ib.textileecommerce.views.HomeView
 import javax.inject.Inject
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
+
+    private var tag = HomeFragment::class.simpleName
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -47,7 +47,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
         layoutView = view
         setViewModel()
         initView()
-        Log.e("HomeFragment --", "--")
+        Log.e(tag, "--")
     }
 
     companion object {
@@ -62,7 +62,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), HomeView {
         homeViewModel =
             ViewModelProviders.of(this, viewModelFactory)[HomeViewModel::class.java]
         homeViewModel.setViewInterface(this)
-        activityHomeBinding = bindViewData()
+        activityHomeBinding = getViewBinding()
         activityHomeBinding.viewModel = homeViewModel
     }
 }

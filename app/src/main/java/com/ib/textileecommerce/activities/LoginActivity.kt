@@ -65,7 +65,13 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>(), LoginView {
         }
 
         activityLoginBinding.llSignUpForFree.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, SignUpActivity::class.java))
+            overridePendingTransition(R.anim.anim_screen_enter, R.anim.anim_screen_exit)
+        }
 
+        activityLoginBinding.tvForgotPassword.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, ForgotPasswordActivity::class.java))
+            overridePendingTransition(R.anim.anim_screen_enter, R.anim.anim_screen_exit)
         }
     }
 

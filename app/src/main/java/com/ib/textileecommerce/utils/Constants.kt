@@ -36,5 +36,12 @@ object Constants {
     const val BAG_FRAGMENT = "BagFragment"
     const val FAVOURITE_FRAGMENT = "FavouriteFragment"
     const val SETTINGS_FRAGMENT = "SettingsFragment"
+    const val DASHBOARD = "DASHBOARD"
+    const val ORDER_HISTORY = "OrderHistory"
+    const val TRACK_YOUR_ORDER = "TrackYourOrder"
+    const val MANAGE_ADDRESS = "ManageAddress"
+    const val CHANGE_PASSWORD = "ChangePassword"
+    const val GIVE_FEEDBACK = "GiveFeedBack"
+    const val TERMS_AND_CONDITION = "TermsAndCondition"
 
 }

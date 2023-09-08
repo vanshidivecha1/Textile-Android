@@ -13,4 +13,5 @@
     <color name="headingColor">#FF262626</color>
     <color name="descColor">#FF949494</color>
     <color name="textFieldHeadingColor">#FF434343</color>
+    <color name="favouriteItemPriceColor">#db714a</color>
 </resources>

@@ -6,8 +6,12 @@ import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -35,13 +39,25 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment(), BaseView {
             .activityComponent(ViewModule(this))
     }
 
-    protected fun bindViewData(): T {
+   /* protected fun bindViewData(): T {
         viewDataBinding = DataBindingUtil.setContentView(requireActivity(), getLayoutId())
         viewDataBinding.lifecycleOwner = this
         getViewModel().setViewInterface(this)
         setUpSnackBar()
         return viewDataBinding
+    }*/
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        viewDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
+        viewDataBinding.lifecycleOwner = this
+        return viewDataBinding.root
     }
+
+    fun getViewBinding() = viewDataBinding
 
     private fun setUpSnackBar() {
         getViewModel().getMutableSnackBar().observe(this, Observer { msg ->

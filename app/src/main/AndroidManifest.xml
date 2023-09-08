@@ -16,6 +16,21 @@
         android:theme="@style/Theme.TextileECommerce"
         tools:targetApi="31">
         <activity
+            android:name=".fragments.ManageAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.VerificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.NewPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.ProfileActivity"
             android:exported="true" />
         <activity

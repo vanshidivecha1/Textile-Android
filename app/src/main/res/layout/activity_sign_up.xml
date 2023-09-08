@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".activities.LoginActivity">
+    tools:context=".activities.SignUpActivity">
 
     <data>
 
@@ -10,7 +10,7 @@
 
         <variable
             name="viewModel"
-            type="com.ib.textileecommerce.viewModel.LoginViewModel" />
+            type="com.ib.textileecommerce.viewModel.SignUpViewModel" />
     </data>
 
     <ScrollView
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_31sdp"
                 android:gravity="center"
-                android:text="@string/login_screen_welcome_back_text"
+                android:text="@string/create_account_text"
                 android:textColor="@color/headingColor"
                 android:textSize="@dimen/_20sdp"
                 android:textStyle="bold"
@@ -49,20 +49,49 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginTop="@dimen/_1sdp"
                 android:gravity="center"
-                android:text="@string/login_screen_desc"
+                android:text="@string/sign_up_desc"
                 android:textColor="@color/descColor"
                 android:textStyle="bold"
                 app:typeface="SEGOE_SEMI_BOLD" />
 
             <com.ib.textileecommerce.customViews.CustomTextView
+                android:id="@+id/tvFullName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_30sdp"
+                android:text="@string/enter_full_name_text"
+                android:textColor="@color/textFieldHeadingColor"
+                android:textSize="@dimen/_12ssp"
+                app:typeface="SEGOE_REGULAR" />
+
+            <com.ib.textileecommerce.customViews.CustomEditText
+                android:id="@+id/etFullName"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="@drawable/layout_border"
+                android:ems="10"
+                android:hint="@string/enter_full_name_text"
+                android:inputType="textEmailAddress"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/textFieldHeadingColor"
+                android:textSize="@dimen/_12ssp"
+                app:typeface="SEGOE_REGULAR" />
+
+            <com.ib.textileecommerce.customViews.CustomTextView
                 android:id="@+id/TVEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_34sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
                 android:text="@string/email_text"
                 android:textColor="@color/textFieldHeadingColor"
-                android:textSize="@dimen/_14sdp"
+                android:textSize="@dimen/_12ssp"
                 app:typeface="SEGOE_REGULAR" />
 
             <com.ib.textileecommerce.customViews.CustomEditText
@@ -80,17 +109,19 @@
                 android:paddingEnd="@dimen/_10sdp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/textFieldHeadingColor"
+                android:textSize="@dimen/_12ssp"
                 app:typeface="SEGOE_REGULAR" />
 
             <com.ib.textileecommerce.customViews.CustomTextView
                 android:id="@+id/tvPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_18sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
                 android:text="@string/password_text"
                 android:textColor="@color/textFieldHeadingColor"
-                android:textSize="@dimen/_14sdp"
+                android:textSize="@dimen/_12ssp"
                 app:typeface="SEGOE_REGULAR" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -115,27 +146,17 @@
                     android:inputType="textPassword"
                     android:textColor="@color/textFieldHeadingColor"
                     android:textColorHint="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12ssp"
                     app:typeface="SEGOE_REGULAR" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <com.ib.textileecommerce.customViews.CustomTextView
-                android:id="@+id/tvForgotPassword"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:padding="@dimen/_3sdp"
-                android:text="@string/forgot_password_text"
-                android:textColor="@color/black" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_32sdp"
-                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_25sdp"
-                android:layout_marginEnd="@dimen/_18sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
                 android:background="@drawable/layout_main_button"
                 android:text="@string/sign_in_text"
                 android:textAllCaps="false"
@@ -174,22 +195,22 @@
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
                 android:weightSum="2">
 
                 <com.ib.textileecommerce.customViews.CustomTextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_20sdp"
                     android:layout_weight="1"
                     android:gravity="end"
-                    android:hint="@string/don_t_have_an_account_text"
                     android:padding="@dimen/_3sdp"
+                    android:text="@string/already_have_an_account_text"
                     android:textColorHint="@color/textFieldHeadingColor"
                     android:textSize="@dimen/_10sdp" />
 
                 <LinearLayout
-                    android:id="@+id/llSignUpForFree"
-                    android:layout_width="match_parent"
+                    android:id="@+id/llSignIn"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
@@ -197,9 +218,9 @@
                     <com.ib.textileecommerce.customViews.CustomTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_2sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:padding="@dimen/_3sdp"
-                        android:text="@string/sign_up_for_free"
+                        android:text="@string/sign_in_text"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_10sdp"
                         android:textStyle="bold" />

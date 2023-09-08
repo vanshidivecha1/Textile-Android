@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_130sdp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    app:cardCornerRadius="@dimen/_8sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="@dimen/_6sdp"
+            app:cardElevation="@dimen/_5sdp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivItemImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_user" />
+
+                <ImageView
+                    android:layout_width="@dimen/_14sdp"
+                    android:layout_height="@dimen/_14sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/ic_heart_selected" />
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <com.ib.textileecommerce.customViews.CustomTextView
+            android:id="@+id/etFavouriteItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@android:color/transparent"
+            android:ellipsize="end"
+            android:text="Straight Kurta"
+            android:textColor="@color/headingColor"
+            android:textSize="@dimen/_13ssp"
+            app:typeface="SEGOE_SEMI_BOLD" />
+
+        <com.ib.textileecommerce.customViews.CustomTextView
+            android:id="@+id/etFavouriteItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:background="@android:color/transparent"
+            android:drawableStart="@drawable/ic_rupee_symbol"
+            android:drawablePadding="@dimen/_3sdp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="250"
+            android:textColor="@color/favouriteItemPriceColor"
+            android:textSize="@dimen/_13ssp"
+            app:typeface="SEGOE_SEMI_BOLD" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -7,11 +7,16 @@ import com.ib.textileecommerce.viewModel.BagViewModel
 import com.ib.textileecommerce.viewModel.BaseViewModel
 import com.ib.textileecommerce.viewModel.DashBoardViewModel
 import com.ib.textileecommerce.viewModel.FavouriteViewModel
+import com.ib.textileecommerce.viewModel.ForgotPasswordViewModel
 import com.ib.textileecommerce.viewModel.HomeViewModel
 import com.ib.textileecommerce.viewModel.LoginViewModel
+import com.ib.textileecommerce.viewModel.NewPasswordViewModel
+import com.ib.textileecommerce.viewModel.OrderHistoryViewModel
 import com.ib.textileecommerce.viewModel.ProfileViewModel
 import com.ib.textileecommerce.viewModel.SettingsViewModel
+import com.ib.textileecommerce.viewModel.SignUpViewModel
 import com.ib.textileecommerce.viewModel.SplashViewModel
+import com.ib.textileecommerce.viewModel.VerificationViewModel
 import com.ib.textileecommerce.views.BaseView
 import javax.inject.Inject
 
@@ -51,6 +56,26 @@ class ViewModelFactory @Inject constructor(
             ) as T
 
             modelClass.isAssignableFrom(SettingsViewModel::class.java) -> SettingsViewModel(
+                networkService, baseView
+            ) as T
+
+            modelClass.isAssignableFrom(ForgotPasswordViewModel::class.java) -> ForgotPasswordViewModel(
+                networkService, baseView
+            ) as T
+
+            modelClass.isAssignableFrom(NewPasswordViewModel::class.java) -> NewPasswordViewModel(
+                networkService, baseView
+            ) as T
+
+            modelClass.isAssignableFrom(SignUpViewModel::class.java) -> SignUpViewModel(
+                networkService, baseView
+            ) as T
+
+            modelClass.isAssignableFrom(VerificationViewModel::class.java) -> VerificationViewModel(
+                networkService, baseView
+            ) as T
+
+            modelClass.isAssignableFrom(OrderHistoryViewModel::class.java) -> OrderHistoryViewModel(
                 networkService, baseView
             ) as T
 

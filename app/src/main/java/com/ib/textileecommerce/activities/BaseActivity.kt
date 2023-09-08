@@ -139,8 +139,9 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseView
      * Add fragment on activity or fragment
      */
     fun addFragment(fragment: Fragment, tag: String) {
-        supportFragmentManager.beginTransaction().addToBackStack(tag)
+        supportFragmentManager.beginTransaction()
             .replace(R.id.frameContainer, fragment, tag)
+            .addToBackStack(tag)
             .commitAllowingStateLoss()
     }
 
@@ -150,7 +151,7 @@ abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity(), BaseView
     fun addFragmentChild(childFragmentManager: FragmentManager, fragment: Fragment, tag: String) {
         childFragmentManager.beginTransaction().addToBackStack(tag)
             .add(R.id.frameContainer, fragment, tag)
-            .commitAllowingStateLoss()
+            .commit()
     }
 
     /**

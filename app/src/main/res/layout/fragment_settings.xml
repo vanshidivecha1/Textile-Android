@@ -12,14 +12,167 @@
             type="com.ib.textileecommerce.viewModel.SettingsViewModel" />
     </data>
 
-    <FrameLayout
+    <ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Settings" />
+            android:layout_height="wrap_content"
+            android:background="@color/backgroundColor">
 
-    </FrameLayout>
+            <com.ib.textileecommerce.customViews.CustomTextView
+                android:id="@+id/tvOrderHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/layout_field_background"
+                android:drawableStart="@drawable/ic_setting_order_history"
+                android:drawablePadding="@dimen/_10sdp"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/order_history_text"
+                android:textColor="@color/headingColor"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:typeface="SEGOE_SEMI_BOLD" />
+
+            <com.ib.textileecommerce.customViews.CustomTextView
+                android:id="@+id/tvTrackYouOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/layout_field_background"
+                android:drawableStart="@drawable/ic_setting_track_order"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/track_your_order_text"
+                android:textColor="@color/headingColor"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOrderHistory"
+                app:typeface="SEGOE_SEMI_BOLD" />
+
+            <com.ib.textileecommerce.customViews.CustomTextView
+                android:id="@+id/tvManageAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/layout_field_background"
+                android:drawableStart="@drawable/ic_setting_manage_address"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/manage_address_text"
+                android:textColor="@color/headingColor"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTrackYouOrder"
+                app:typeface="SEGOE_SEMI_BOLD" />
+
+            <com.ib.textileecommerce.customViews.CustomTextView
+                android:id="@+id/tvChangePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/layout_field_background"
+                android:drawableStart="@drawable/ic_setting_change_password"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/change_password_text"
+                android:textColor="@color/headingColor"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvManageAddress"
+                app:typeface="SEGOE_SEMI_BOLD" />
+
+
+            <com.ib.textileecommerce.customViews.CustomTextView
+                android:id="@+id/tvGiveFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/layout_field_background"
+                android:drawableStart="@drawable/ic_setting_give_feedback"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/give_feedback_text"
+                android:textColor="@color/headingColor"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvChangePassword"
+                app:typeface="SEGOE_SEMI_BOLD" />
+
+            <com.ib.textileecommerce.customViews.CustomTextView
+                android:id="@+id/tvTermsAndCondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@drawable/layout_field_background"
+                android:drawableStart="@drawable/ic_setting_term_and_condition"
+                android:drawablePadding="@dimen/_10sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:text="@string/terms_and_condition_text"
+                android:textColor="@color/headingColor"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvGiveFeedback"
+                app:typeface="SEGOE_SEMI_BOLD" />
+
+
+            <com.ib.textileecommerce.customViews.CustomTextView
+                android:id="@+id/tvLogOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_30sdp"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/log_out_text"
+                android:textColor="@color/mainColor"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:typeface="SEGOE_BOLD" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </layout>

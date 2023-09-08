@@ -39,7 +39,42 @@
     <string name="submit_text">Submit</string>
     <string name="gender_text">Gender</string>
     <string name="my_profile_text">My Profile</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
+    <!-- Forget Password Screen Content -->
+    <string name="forget_password_text">Forget Password</string>
+    <string name="enter_email_address_text">Enter Email Address</string>
+    <string name="sign_in_again_text">Sign in ?</string>
+    <string name="back_to_text">Back to</string>
+    <string name="send_text">Send</string>
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- New Password Screen Content -->
+    <string name="new_password_text">New Password</string>
+    <string name="enter_new_password_text">Enter New Password</string>
+    <string name="enter_confirm_password_text">Enter Confirm Password</string>
+
+    <!-- Sign Up Screen Content -->
+    <string name="create_account_text">Create Account</string>
+    <string name="sign_up_desc">Let\'s Create Account Together</string>
+    <string name="enter_full_name_text">Enter Full Name</string>
+    <string name="already_have_an_account_text">Already have an account?</string>
+
+    <!-- Verification Screen Content -->
+    <string name="verification_text">Verification</string>
+    <string name="enter_verification_code_text">Enter Verification Code</string>
+    <string name="resend_text">Resend</string>
+    <string name="if_you_didn_t_receive_code_text">If you didn\'t receive code!</string>
+    <string name="verify_text">Verify</string>
+
+    <!-- Setting Screen Content -->
+    <string name="order_history_text">Order History</string>
+    <string name="manage_address_text">Manage Address</string>
+    <string name="track_your_order_text">Track Your Order</string>
+    <string name="change_password_text">Change Password</string>
+    <string name="help_center_text">Help Center</string>
+    <string name="terms_and_condition_text">Terms and Condition</string>
+    <string name="give_feedback_text">Give Feedback</string>
+    <string name="log_out_text">Log Out</string>
 
 </resources>

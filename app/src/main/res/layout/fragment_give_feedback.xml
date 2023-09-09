@@ -1,14 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".fragments.GiveFeedbackFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.ib.textileecommerce.viewModel.GiveFeedBackViewModel" />
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:fillViewport="true">
 
-</FrameLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.ib.textileecommerce.customViews.CustomTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:text="@string/feedback_title_text"
+                    android:textColor="@color/headingColor"
+                    android:textSize="@dimen/_14ssp"
+                    app:typeface="SEGOE_SEMI_BOLD" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <com.ib.textileecommerce.customViews.CustomEditText
+                        android:id="@+id/etOverAllService"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/layout_field_border"
+                        android:ellipsize="end"
+                        android:hint="@string/overall_service_text"
+                        android:maxLines="2"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:textColor="@color/headingColor"
+                        android:textColorHint="@color/descColor"
+                        android:textSize="@dimen/_12sdp" />
+
+                    <com.ib.textileecommerce.customViews.CustomEditText
+                        android:id="@+id/etCustomerSupport"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_32sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/layout_field_border"
+                        android:ellipsize="end"
+                        android:hint="@string/customer_support_text"
+                        android:maxLines="2"
+                        android:paddingStart="@dimen/_5sdp"
+                        android:paddingEnd="@dimen/_5sdp"
+                        android:textColor="@color/headingColor"
+                        android:textColorHint="@color/descColor"
+                        android:textSize="@dimen/_12ssp" />
+
+                </LinearLayout>
+
+                <com.ib.textileecommerce.customViews.CustomEditText
+                    android:id="@+id/etPickUpAndDeliveryService"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/layout_field_border"
+                    android:ellipsize="end"
+                    android:hint="@string/pick_up_and_delivery_service_text"
+                    android:maxLines="2"
+                    android:paddingStart="@dimen/_5sdp"
+                    android:paddingEnd="@dimen/_5sdp"
+                    android:textColor="@color/headingColor"
+                    android:textColorHint="@color/descColor"
+                    android:textSize="@dimen/_12ssp" />
+
+                <com.ib.textileecommerce.customViews.CustomEditText
+                    android:id="@+id/etFeedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:background="@drawable/layout_field_only_border"
+                    android:ellipsize="end"
+                    android:gravity="start"
+                    android:hint="@string/tell_us_how_can_we_improve_text"
+                    android:lines="7"
+                    android:maxLines="7"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/headingColor"
+                    android:textColorHint="#949494"
+                    android:textSize="@dimen/_12sdp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSubmitFeedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/layout_field_background"
+                android:hint="@string/submit_text"
+                android:textColorHint="@color/white" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+</layout>

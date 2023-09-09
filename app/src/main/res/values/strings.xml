@@ -77,4 +77,51 @@
     <string name="give_feedback_text">Give Feedback</string>
     <string name="log_out_text">Log Out</string>
 
+    <!-- Terms Condition Content -->
+    <string name="terms_and_conditions_text"><b>1. Introduction</b>
+        \nWelcome to Magaswala! These Terms and Conditions ("Terms") govern your use of our mobile application and services. By accessing or using our mobile application, you agree to be bound by these Terms. If you do not agree with these Terms, please do not use our mobile application.
+        \n
+        \n<b>2. Use of Mobile Application</b>
+        \nOur mobile application is intended for personal and non-commercial use only. You may not use our mobile application for any illegal or unauthorized purpose, nor may you, in the use of our mobile application, violate any laws in your jurisdiction.
+        \n
+        \n<b>3. Products and Pricing</b>
+        \nWe offer authentic Indian sweets from Dakor, Gujarat for sale on our mobile application. We reserve the right to change our products and prices at any time without notice. We make every effort to ensure the accuracy of the information on our mobile application, but we cannot guarantee that the information is up-to-date or error-free.
+        \n
+        \n<b>4. Ordering and Payment</b>
+        \nTo place an order on our mobile application, you must provide us with accurate and complete information, including your name, address, phone number, and payment information. We accept payment by various methods as indicated on our mobile application. By submitting your order, you authorize us to charge your payment method for the total amount of your order.
+        \n
+        \n<b>5. Shipping and Delivery</b>
+        \nWe currently offer to ship within India only. We make every effort to ship your order as quickly as possible, but we cannot guarantee delivery times. We are not responsible for any delays or damages caused by shipping carriers.
+        \n
+        \n<b>6. Returns and Refunds</b>
+        \nWe want you to be completely satisfied with your purchase. If for any reason you are not satisfied with your order, please contact us within 5 days of receiving your order to request a return or refund. We will work with you to resolve any issues as quickly as possible.
+        \n
+        \n<b>7. Intellectual Property</b>
+        \nAll content on our mobile application, including text, graphics, logos, images, and software, is the property of Magaswala or its content suppliers and is protected by Indian and international copyright laws. You may not use or reproduce any content on our mobile application without our express written consent.
+        \n
+        \n<b>8. Disclaimer of Warranties</b>
+        \nWe make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to our mobile application or the information, products, services, or related graphics contained on our mobile application for any purpose. Any reliance you place on such information is therefore strictly at your own risk.
+        \n
+        \n<b>9. Limitation of Liability</b>
+        \nIn no event shall Magaswala or its owners, officers, employees, or agents be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in any way connected with your use of our mobile application or our products, whether based on contract, tort, strict liability, or any other theory of liability.
+        \n
+        \n<b>10. Governing Law</b>
+        \nThese Terms and Conditions shall be governed by and construed in accordance with the laws of India, without giving effect to any principles of conflicts of law.
+        \n
+    </string>
+
+    <!-- Give FeedBack Content -->
+    <string name="feedback_title_text">Tell Us What Can Be Improved?</string>
+    <string name="overall_service_text">Overall Service</string>
+    <string name="customer_support_text">Customer Support</string>
+    <string name="pick_up_and_delivery_service_text">Pick up and delivery service</string>
+    <string name="tell_us_how_can_we_improve_text">Tell us how can we improve...</string>
+
+    <!-- Change Password Content -->
+    <string name="current_password_text">Current Password</string>
+    <string name="confirm_password_text">Confirm Password</string>
+
+    <!-- Manage Address Content -->
+    <string name="add_address_text">Add Address</string>
+
 </resources>

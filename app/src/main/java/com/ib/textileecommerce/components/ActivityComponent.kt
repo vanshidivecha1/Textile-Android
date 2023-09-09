@@ -9,10 +9,14 @@ import com.ib.textileecommerce.activities.SignUpActivity
 import com.ib.textileecommerce.activities.SplashActivity
 import com.ib.textileecommerce.activities.VerificationActivity
 import com.ib.textileecommerce.fragments.BagFragment
+import com.ib.textileecommerce.fragments.ChangePasswordFragment
 import com.ib.textileecommerce.fragments.FavouriteFragment
+import com.ib.textileecommerce.fragments.GiveFeedbackFragment
 import com.ib.textileecommerce.fragments.HomeFragment
+import com.ib.textileecommerce.fragments.ManageAddressFragment
 import com.ib.textileecommerce.fragments.OrderHistoryFragment
 import com.ib.textileecommerce.fragments.SettingsFragment
+import com.ib.textileecommerce.fragments.TermsAndConditionFragment
 import com.ib.textileecommerce.fragments.TrackYourOrderFragment
 import com.ib.textileecommerce.module.ActivityModule
 import com.ib.textileecommerce.module.ViewModule
@@ -39,4 +43,8 @@ interface ActivityComponent {
     fun inject(settingsFragment: SettingsFragment)
     fun inject(orderHistoryFragment: OrderHistoryFragment)
     fun inject(trackYourOrderFragment: TrackYourOrderFragment)
+    fun inject(manageAddressFragment: ManageAddressFragment)
+    fun inject(changePasswordFragment: ChangePasswordFragment)
+    fun inject(giveFeedbackFragment: GiveFeedbackFragment)
+    fun inject(termsAndConditionFragment: TermsAndConditionFragment)
 }

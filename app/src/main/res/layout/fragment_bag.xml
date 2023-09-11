@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragments.BagFragment">
 
@@ -12,14 +13,157 @@
             type="com.ib.textileecommerce.viewModel.BagViewModel" />
     </data>
 
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TextView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintlayout1myorder"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="BAG" />
+            android:layout_height="wrap_content">
 
-    </FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvOrders"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RelativeLayout
+                android:id="@+id/rlOne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_25sdp"
+                android:background="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvOrders">
+
+                <TextView
+                    android:id="@+id/TVordersummarymyorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="@string/order_summary_text"
+                    android:textColor="@color/headingColor"
+                    android:textSize="@dimen/_14ssp" />
+
+                <TextView
+                    android:id="@+id/subtotalmyorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_60sdp"
+                    android:text="Subtotal"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/shippingmyorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_90sdp"
+                    android:text="Shipping"
+                    android:textColor="@color/darkgrey"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/subtotalamtmyorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_62sdp"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:textColor="@color/haldi"
+                    android:textSize="@dimen/_13sdp" />
+
+                <ImageView
+                    android:id="@+id/imageruppemyorder"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_65sdp"
+                    android:layout_marginEnd="@dimen/_80sdp"
+                    android:src="@drawable/goldenrupeesymbol" />
+
+                <TextView
+                    android:id="@+id/shippingamtmyorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_93sdp"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:textColor="@color/haldi"
+                    android:textSize="@dimen/_13sdp" />
+
+                <ImageView
+                    android:id="@+id/imageruppe1myorder"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_95sdp"
+                    android:layout_marginEnd="@dimen/_80sdp"
+                    android:src="@drawable/goldenrupeesymbol" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginStart="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_120sdp"
+                    android:layout_marginEnd="@dimen/_18sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:background="@color/greyish" />
+
+                <TextView
+                    android:id="@+id/TVtotalpayemntmyorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_130sdp"
+                    android:text="Total Payment"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_13sdp" />
+
+                <TextView
+                    android:id="@+id/TVtotalpaymentamtmyorder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_131sdp"
+                    android:layout_marginEnd="@dimen/_32sdp"
+                    android:textColor="@color/haldi"
+                    android:textSize="@dimen/_13sdp" />
+
+                <ImageView
+                    android:id="@+id/imageruppe3myorder"
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_135sdp"
+                    android:layout_marginEnd="@dimen/_80sdp"
+                    android:src="@drawable/goldenrupeesymbol" />
+
+                <Button
+                    android:id="@+id/butcheckoutmyorder"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginStart="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_160sdp"
+                    android:layout_marginEnd="@dimen/_18sdp"
+                    android:layout_marginBottom="@dimen/_13sdp"
+                    android:background="@drawable/roundborderbutton"
+                    android:hint="Check Out"
+                    android:textColorHint="@color/white2"
+                    android:textSize="@dimen/_14sdp" />
+
+            </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
 </layout>

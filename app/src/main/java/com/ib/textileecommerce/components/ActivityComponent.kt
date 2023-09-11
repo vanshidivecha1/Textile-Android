@@ -8,6 +8,7 @@ import com.ib.textileecommerce.activities.ProfileActivity
 import com.ib.textileecommerce.activities.SignUpActivity
 import com.ib.textileecommerce.activities.SplashActivity
 import com.ib.textileecommerce.activities.VerificationActivity
+import com.ib.textileecommerce.fragments.AddAddressFragment
 import com.ib.textileecommerce.fragments.BagFragment
 import com.ib.textileecommerce.fragments.ChangePasswordFragment
 import com.ib.textileecommerce.fragments.FavouriteFragment
@@ -47,4 +48,5 @@ interface ActivityComponent {
     fun inject(changePasswordFragment: ChangePasswordFragment)
     fun inject(giveFeedbackFragment: GiveFeedbackFragment)
     fun inject(termsAndConditionFragment: TermsAndConditionFragment)
+    fun inject(addAddressFragment: AddAddressFragment)
 }

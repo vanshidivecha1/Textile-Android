@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragments.AddAddressFragment">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.ib.textileecommerce.viewModel.AddAddressViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:id="@+id/llMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvContactInfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/contact_info_text"
+                android:textColor="@color/headingColor"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/layout_grey_bg_with_border"
+                android:hint="@string/enter_name_text"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@color/headingColor"
+                android:textColorHint="@color/textFieldHeadingColor"
+                android:textSize="@dimen/_14ssp" />
+
+            <EditText
+                android:id="@+id/etPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/layout_grey_bg_with_border"
+                android:ems="10"
+                android:hint="@string/enter_phone_number_text"
+                android:inputType="phone"
+                android:maxLength="10"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@color/headingColor"
+                android:textColorHint="@color/textFieldHeadingColor"
+                android:textSize="@dimen/_14ssp" />
+
+            <View
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/backgroundColor" />
+
+            <TextView
+                android:id="@+id/tvAddressInfoText"
+                android:layout_width="wrap_content"
+                android:layout_height="28dp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/address_info_text"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <AutoCompleteTextView
+                    android:id="@+id/etCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_grey_bg_with_border"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:ems="10"
+                    android:hint="@string/country_text"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textColor="@color/headingColor"
+                    android:textColorHint="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_14ssp" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/editstateadd"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_grey_bg_with_border"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:ems="10"
+                    android:hint="@string/state_text"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textColor="@color/headingColor"
+                    android:textColorHint="@color/textFieldHeadingColor" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                android:weightSum="2">
+
+                <AutoCompleteTextView
+                    android:id="@+id/editcityadd"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_grey_bg_with_border"
+                    android:drawableEnd="@drawable/ic_arrow_down"
+                    android:ems="10"
+                    android:hint="@string/city_text"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textColor="@color/headingColor"
+                    android:textColorHint="@color/textFieldHeadingColor" />
+
+                <EditText
+                    android:id="@+id/editpincodeadd"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_32sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/layout_grey_bg_with_border"
+                    android:hint="@string/pincode_text"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/_10sdp"
+                    android:paddingEnd="@dimen/_10sdp"
+                    android:textColor="@color/headingColor"
+                    android:textColorHint="@color/textFieldHeadingColor" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editlocationadd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/layout_grey_bg_with_border"
+                android:hint="@string/location_area_street_text"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@color/headingColor"
+                android:textColorHint="@color/textFieldHeadingColor" />
+
+            <EditText
+                android:id="@+id/editflatnoadd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_37sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/layout_grey_bg_with_border"
+                android:ems="10"
+                android:hint="@string/flat_no_building_name_text"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@color/headingColor"
+                android:textColorHint="@color/textFieldHeadingColor" />
+
+            <EditText
+                android:id="@+id/addressline"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/layout_grey_bg_with_border"
+                android:hint="@string/address_line_1_text"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@color/headingColor"
+                android:textColorHint="@color/textFieldHeadingColor" />
+
+            <EditText
+                android:id="@+id/editlandmarkadd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_32sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/layout_grey_bg_with_border"
+                android:hint="@string/landmark_optional_text"
+                android:inputType="textPersonName"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:textColor="@color/headingColor"
+                android:textColorHint="@color/textFieldHeadingColor" />
+
+            <View
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@color/backgroundColor" />
+
+            <TextView
+                android:id="@+id/TVtypeofaddressadd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/type_of_address_text"
+                android:textColor="@color/headingColor"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radiogroupadd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainColor"
+                    android:text="@string/home_text"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RadioButton
+                    android:id="@+id/rbOffice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:buttonTint="@color/mainColor"
+                    android:text="@string/office_text"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12ssp" />
+
+                <RadioButton
+                    android:id="@+id/rbOther"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/mainColor"
+                    android:text="@string/other_text"
+                    android:textColor="@color/textFieldHeadingColor"
+                    android:textSize="@dimen/_12ssp" />
+            </RadioGroup>
+
+            <CheckBox
+                android:id="@+id/cbMarkAsDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:buttonTint="@color/mainColor"
+                android:text="@string/make_as_default_address_text"
+                android:textColor="@color/textFieldHeadingColor"
+                android:textSize="@dimen/_12ssp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundColor">
+
+                <Button
+                    android:id="@+id/btnSaveAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/layout_main_button"
+                    android:hint="@string/save_address_text"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_14ssp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>

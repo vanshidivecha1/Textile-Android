@@ -3,6 +3,7 @@ package com.ib.textileecommerce.module
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.ib.textileecommerce.networking.NetworkService
+import com.ib.textileecommerce.viewModel.AddAddressViewModel
 import com.ib.textileecommerce.viewModel.BagViewModel
 import com.ib.textileecommerce.viewModel.BaseViewModel
 import com.ib.textileecommerce.viewModel.ChangePasswordViewModel
@@ -101,6 +102,10 @@ class ViewModelFactory @Inject constructor(
             ) as T
 
             modelClass.isAssignableFrom(TermsAndConditionViewModel::class.java) -> TermsAndConditionViewModel(
+                networkService, baseView
+            ) as T
+
+            modelClass.isAssignableFrom(AddAddressViewModel::class.java) -> AddAddressViewModel(
                 networkService, baseView
             ) as T
 

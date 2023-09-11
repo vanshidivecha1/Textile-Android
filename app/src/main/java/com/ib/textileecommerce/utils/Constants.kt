@@ -43,5 +43,6 @@ object Constants {
     const val CHANGE_PASSWORD = "ChangePassword"
     const val GIVE_FEEDBACK = "GiveFeedBack"
     const val TERMS_AND_CONDITION = "TermsAndCondition"
+    const val ADD_ADDRESS_FRAGMENT = "AddAddressFragment"
 
 }

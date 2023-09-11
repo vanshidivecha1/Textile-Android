@@ -10,6 +10,7 @@ import com.ib.textileecommerce.R
 import com.ib.textileecommerce.customViews.CustomTextView
 import com.ib.textileecommerce.databinding.FragmentManageAddressBinding
 import com.ib.textileecommerce.module.ViewModelFactory
+import com.ib.textileecommerce.utils.Constants
 import com.ib.textileecommerce.utils.SessionManager
 import com.ib.textileecommerce.viewModel.ManageAddressViewModel
 import com.ib.textileecommerce.views.ManageAddressView
@@ -35,6 +36,8 @@ class ManageAddressFragment : BaseFragment<FragmentManageAddressBinding>(), Mana
     override fun getBindingVariable() = BR.viewModel
 
     private lateinit var layoutView: View
+    private lateinit var layoutToolBar: CustomTextView
+    private lateinit var ivBack: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +53,10 @@ class ManageAddressFragment : BaseFragment<FragmentManageAddressBinding>(), Mana
     }
 
     companion object {
-        fun getInstance(layoutToolBar: CustomTextView, ivBack: ImageView) =
+        fun getInstance(layoutTopBar: CustomTextView, back: ImageView) =
             ManageAddressFragment().apply {
+                layoutToolBar = layoutTopBar
+                ivBack = back
                 layoutToolBar.text = "Manage Address"
                 ivBack.setOnClickListener {
                     requireActivity().onBackPressed()
@@ -60,6 +65,12 @@ class ManageAddressFragment : BaseFragment<FragmentManageAddressBinding>(), Mana
     }
 
     private fun initView() {
+        fragmentManageAddressBinding.llAddAddress.setOnClickListener {
+            addFragment(
+                AddAddressFragment.getInstance(layoutToolBar, ivBack),
+                Constants.ADD_ADDRESS_FRAGMENT
+            )
+        }
     }
 
     private fun setViewModel() {

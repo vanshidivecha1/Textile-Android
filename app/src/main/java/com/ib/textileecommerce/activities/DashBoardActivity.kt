@@ -11,6 +11,7 @@ import com.ib.textileecommerce.BR
 import com.ib.textileecommerce.R
 import com.ib.textileecommerce.application.TextileApplication
 import com.ib.textileecommerce.databinding.ActivityDashboardBinding
+import com.ib.textileecommerce.fragments.AddAddressFragment
 import com.ib.textileecommerce.fragments.BagFragment
 import com.ib.textileecommerce.fragments.ChangePasswordFragment
 import com.ib.textileecommerce.fragments.FavouriteFragment
@@ -177,8 +178,18 @@ class DashBoardActivity : BaseActivity<ActivityDashboardBinding>(), DashBoardVie
                 currentFragment.tag == Constants.FAVOURITE_FRAGMENT ||
                 currentFragment.tag == Constants.SETTINGS_FRAGMENT
             ) {
-                setHomeToolBar()
-                addFragment(HomeFragment.getInstance(), Constants.HOME_FRAGMENT)
+                if (currentFragment is ManageAddressFragment && currentFragment.tag == Constants.SETTINGS_FRAGMENT) {
+                    setSettingsToolBar()
+                    addFragment(
+                        SettingsFragment.getInstance(
+                            activityDashBoardBinding.tvTitle,
+                            activityDashBoardBinding.ivBack
+                        ), Constants.SETTINGS_FRAGMENT
+                    )
+                } else {
+                    setHomeToolBar()
+                    addFragment(HomeFragment.getInstance(), Constants.HOME_FRAGMENT)
+                }
             } else if (currentFragment is OrderHistoryFragment && currentFragment.tag == Constants.ORDER_HISTORY ||
                 currentFragment is TrackYourOrderFragment && currentFragment.tag == Constants.TRACK_YOUR_ORDER ||
                 currentFragment is ManageAddressFragment && currentFragment.tag == Constants.MANAGE_ADDRESS ||
@@ -189,6 +200,13 @@ class DashBoardActivity : BaseActivity<ActivityDashboardBinding>(), DashBoardVie
                 setSettingsToolBar()
                 addFragment(
                     SettingsFragment.getInstance(
+                        activityDashBoardBinding.tvTitle,
+                        activityDashBoardBinding.ivBack
+                    ), Constants.SETTINGS_FRAGMENT
+                )
+            } else if (currentFragment is AddAddressFragment && currentFragment.tag == Constants.ADD_ADDRESS_FRAGMENT) {
+                addFragment(
+                    ManageAddressFragment.getInstance(
                         activityDashBoardBinding.tvTitle,
                         activityDashBoardBinding.ivBack
                     ), Constants.SETTINGS_FRAGMENT

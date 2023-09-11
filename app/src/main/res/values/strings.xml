@@ -123,5 +123,25 @@
 
     <!-- Manage Address Content -->
     <string name="add_address_text">Add Address</string>
+    <string name="contact_info_text">Contact Info</string>
+
+    <!-- Add Address Content -->
+    <string name="enter_name_text">Enter Name</string>
+    <string name="enter_phone_number_text">Enter Phone Number</string>
+    <string name="address_info_text">Address Info</string>
+    <string name="country_text">Country</string>
+    <string name="save_address_text">Save Address</string>
+    <string name="make_as_default_address_text">Make As Default Address</string>
+    <string name="state_text">State</string>
+    <string name="city_text">City</string>
+    <string name="pincode_text">Pincode</string>
+    <string name="location_area_street_text">Location/Area/Street</string>
+    <string name="flat_no_building_name_text">Flat No/Building Name</string>
+    <string name="address_line_1_text">Address Line 1</string>
+    <string name="landmark_optional_text">Landmark(Optional)</string>
+    <string name="type_of_address_text">Type Of Address</string>
+    <string name="office_text">Office</string>
+    <string name="other_text">Other</string>
+    <string name="order_summary_text">Order Summary</string>
 
 </resources>
